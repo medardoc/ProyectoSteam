@@ -1,2 +1,3 @@
 # ProyectoSteam
  Desarrollaremos una pagina web con implemnetacion de un Login que registra usuarios guardandolo en MySQL, a la vez dando acceso a un panel, en este caso una tienda de Video juegos conectada con la oficial.
+Implementaremos una tabla de juegos con vinculos de juegos guardados en la base de datos para poder ser descargados, la tabla esta contrida con contructor. con una clase y atributos que le daran vida a esta tabla dentro de un index.html donde se podran descaragr los juegos.
