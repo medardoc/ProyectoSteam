@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Steam LATAM</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b2838;
+            color: #c7d5e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #171a21;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            padding: 10px 20px;
+            background-color: #66c0f4;
+            color: #1b2838;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login-container button:hover {
+            background-color: #4a90e2;
+        }
+        .login-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-sizing: border-box;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Steam LATAM</h1>
+        <select id="formSelect" onchange="toggleForms()">
+            <option value="login">Iniciar Sesión</option>
+            <option value="register">Registrar</option>
+        </select>
+
+        <div id="loginForm" class="form-section active">
+            <input type="text" id="loginUsername" placeholder="Usuario">
+            <input type="password" id="loginPassword" placeholder="Contraseña">
+            <button onclick="login()">Iniciar Sesión</button>
+        </div>
+
+        <div id="registerForm" class="form-section">
+            <input type="text" id="registerUsername" placeholder="Usuario">
+            <input type="password" id="registerPassword" placeholder="Contraseña">
+            <button onclick="register()">Registrar</button>
+        </div>
+    </div>
+    <script>
+        function toggleForms() {
+            const formSelect = document.getElementById('formSelect').value;
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (formSelect === 'login') {
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+            } else {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+            }
+        }
+
+        async function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const res = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await res.json();
+            alert(data.message);
+
+            if (res.status === 200) {
+                localStorage.setItem('token', data.token);
+                window.location.href = 'Panel.html';
+            }
+        }
+
+        async function register() {
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await res.json();
+            alert(data.message);
+        }
+    </script>
+</body>
+</html>
+
+

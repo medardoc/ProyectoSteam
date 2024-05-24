@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam LATAM</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b2838;
+            color: #c7d5e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #171a21;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #c7d5e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 400px;
+        }
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }
+        .games-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .game-card {
+            background-color: #2a475e;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
+            width: 30%;
+            box-sizing: border-box;
+            flex: 1 1 calc(33.333% - 30px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .game-card h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .game-card p {
+            margin: 0;
+            text-align: center;
+        }
+        .btnView {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #66c0f4;
+            color: #1b2838;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btnView:hover {
+            background-color: #4a90e2;
+        }
+        footer {
+            background-color: #171a21;
+            color: #c7d5e0;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a Steam LATAM</h1>
+        <nav>
+            <a href="https://store.steampowered.com/" target="_blank">Tienda</a>
+            <a href="https://store.steampowered.com/news/" target="_blank">Noticias</a>
+            <a href="https://steamcommunity.com/" target="_blank">Comunidad</a>
+            <a href="https://help.steampowered.com/en/" target="_blank">Soporte</a>
+        </nav>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('public/img/img.TE.webp');" onclick="window.open('https://www.youtube.com/watch?v=ElzKoBRZjd4', '_blank')"></div>
+            <div class="swiper-slide" style="background-image: url('public/img/img.readpanel.jpeg');" onclick="window.open('https://www.youtube.com/watch?v=MyaYlbizpvs', '_blank')"></div>
+            <div class="swiper-slide" style="background-image: url('public/img/JE_Forum_Banner_v2.webp');" onclick="window.open('https://www.youtube.com/watch?v=w7uOhFTrrq0', '_blank')"></div>
+            <div class="swiper-slide" style="background-image: url('public/img/gta5_2.jpeg');" onclick="window.open('https://www.youtube.com/watch?v=QkkoHAzjnUs', '_blank')"></div>
+            <div class="swiper-slide" style="background-image: url('public/img/imgt2.jpeg');" onclick="window.open('https://www.youtube.com/watch?v=W01L70IGBgE', '_blank')"></div>
+            <div class="swiper-slide" style="background-image: url('public/img/ghots.avif');" onclick="window.open('https://www.youtube.com/watch?v=jT9edKarhc8', '_blank')"></div>
+        </div>
+        <!-- Añade botones de navegación -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+    </div>
+    <div class="games-section">
+        <div class="game-card">
+            <img src="public/img/img.TE.webp" alt="Juego 1" width="500" height="250">
+            <h3>The Elder Scrolls</h3>
+            <p>Juego de rol mundo abierto ambientado en la epoca medieval</p>
+            <button id="View" onclick="window.open('https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+        <div class="game-card">
+            <img src="public/img/img.terraria2.webp" alt="Juego 2" width="500" height="250">
+            <h3>Terraria</h3>
+            <p>Una gran experiencia 2D</p>
+            <button id="View2" onclick="window.open('https://store.steampowered.com/app/105600/Terraria/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+        <div class="game-card">
+            <img src="public/img/imgRR2.jpeg" alt="Juego 3" width="500" height="250">
+            <h3>Red Dead Redemption 2</h3>
+            <p>Juego ambientado en el viejo oeste</p>
+            <button id="View3" onclick="window.open('https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+        <div class="game-card">
+            <img src="public/img/gta5.webp" alt="Juego 4" width="500" height="250">
+            <h3>Grand Theft Auto V</h3>
+            <p>Juego mundo abierto interactivo</p>
+            <button id="View4" onclick="window.open('https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+        <div class="game-card">
+            <img src="public/img/TLOU.jpeg" alt="Juego 5" width="500" height="250">
+            <h3>The Last Of Us</h3>
+            <p>Juego posapocaliptico de zombie</p>
+            <button id="View5" onclick="window.open('https://store.steampowered.com/app/18893/The_Last_of_Us_Remastered/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+        <div class="game-card">
+            <img src="public/img/ghots.avif" alt="Juego 6" width="500" height="250">
+            <h3>Ghost of Tsushima</h3>
+            <p>Juego de la mitologia japonesa</p>
+            <button id="View6" onclick="window.open('https://store.steampowered.com/app/1396860/Ghost_of_Tsushima/', '_blank')" class="btnView">Ver juego</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Steam LATAM. Todos los derechos reservados.</p>
+        <p><a href="https://store.steampowered.com/legal/privacy/" target="_blank" style="color: #c7d5e0; text-decoration: none;">Política de Privacidad</a> | <a href="https://store.steampowered.com/legal/" target="_blank" style="color: #c7d5e0; text-decoration: none;">Términos de Servicio</a></p>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // Tiempo en milisegundos entre cada slide
+                disableOnInteraction: false, // Mantiene el autoplay después de la interacción
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        function view() {
+            window.open('https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/', '_blank');
+        }
+        function view2() {
+            window.open('https://store.steampowered.com/app/105600/Terraria/', '_blank');
+        }
+        function view3() {
+            window.open('https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/', '_blank');
+        }
+        function view4() {
+            window.open('https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/', '_blank');
+        }
+        function view5() {
+            window.open('https://store.steampowered.com/app/18893/The_Last_of_Us_Remastered/', '_blank');
+        }
+        function view6() {
+            window.open('https://store.steampowered.com/app/1396860/Ghost_of_Tsushima/', '_blank');
+        }
+    </script>
+</body>
+</html>
