@@ -74,6 +74,18 @@ const server = http.createServer((req, res) => {
                 }
             );
         });
+    } else if (pathname === '/juegos' && req.method === 'GET') {
+        // Aquí llamamos a la función para obtener los juegos de la base de datos
+        connection.query('SELECT * FROM JuegosSteam', (error, results) => {
+            if (error) {
+                console.error('Database error:', error);
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ message: 'Error interno del servidor' }));
+            } else {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(results));
+            }
+        });
     } else {
         let filePath = path.join(__dirname, pathname === '/' ? 'login.html' : pathname);
 
@@ -114,4 +126,3 @@ const port = 3000;
 server.listen(port, () => {
     console.log(`Servidor Creado http://localhost:${port}`);
 });
-
