@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Steam LATAM</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" type="image/png">
+    <!--Este style contiene todo los aspectos CSS-->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -98,7 +99,7 @@
                 registerForm.classList.add('active');
             }
         }
-
+        //Implementamos el funcionamiento de nuestro login 
         async function login() {
             const username = document.getElementById('loginUsername').value;
             const password = document.getElementById('loginPassword').value;

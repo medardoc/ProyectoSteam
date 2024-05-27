@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.getElementById('send-button');
     const chatDisplay = document.getElementById('chat-display');
     const userInput = document.getElementById('user-input');
-
+//Esta funcion nos permite desplegar la burbuja del chat
     chatBubble.addEventListener('click', function() {
         chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
     });
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sendButton.addEventListener('click', function() {
         const userMessage = userInput.value;
         appendMessage('user', userMessage);
-        
+        //Con Este switch daremos vida a las opciones del chat bot
         switch(userMessage) {
             case '1':
                 appendMessage('bot', 'Puedes llamar al 920035194');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// chatbot.js
+// Esta es la clase que nos permite la verificación
 class Verificar {
     constructor() {
         this.verificarFuncionamiento();

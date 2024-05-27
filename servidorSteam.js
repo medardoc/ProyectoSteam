@@ -1,3 +1,4 @@
+//En esta seccion encontaremos las conexiones a MYSQL, donde registraremos a los users y nos verificara para el ingreso.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
