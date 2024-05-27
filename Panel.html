@@ -103,6 +103,79 @@
         footer p {
             margin: 5px 0;
         }
+        /* Estilos del chatbot */
+        /* Estilos del chatbot */
+#chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#chat-container {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+#chat-display {
+    height: 200px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+}
+
+.bot-message, .user-message {
+    color: black; /* Cambiar el color del texto a negro */
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-left: 20px;
+}
+
+.user-message {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#send-button {
+    width: 60px;
+    padding: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
@@ -116,6 +189,17 @@
             <a href="index.html">Tabla de Juegos</a> 
         </nav>
     </header>
+    <!-- Chatbot -->
+    <div id="chat-bubble">💬</div>
+    <div id="chat-container">
+        <div id="chat-display">
+            <div class="chat-message">
+                <div class="bot-message">¡Hola! ¿En qué puedo ayudarte?</div>
+            </div>
+        </div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button id="send-button">Enviar</button>
+    </div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image: url('public/img/img.TE.webp');" onclick="window.open('https://www.youtube.com/watch?v=ElzKoBRZjd4', '_blank')"></div>
@@ -172,7 +256,10 @@
         <p>&copy; 2024 Steam LATAM. Todos los derechos reservados.</p>
         <p><a href="https://store.steampowered.com/legal/privacy/" target="_blank" style="color: #c7d5e0; text-decoration: none;">Política de Privacidad</a> | <a href="https://store.steampowered.com/legal/" target="_blank" style="color: #c7d5e0; text-decoration: none;">Términos de Servicio</a></p>
     </footer>
+    
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <!-- JavaScript -->
+     <script src="chatbot.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             loop: true,
@@ -189,6 +276,7 @@
                 clickable: true,
             },
         });
+        
 
         function view() {
             window.open('https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/', '_blank');
