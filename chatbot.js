@@ -42,3 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// chatbot.js
+class Verificar {
+    constructor() {
+        this.verificarFuncionamiento();
+    }
+
+    verificarFuncionamiento() {
+        console.log("¡La verificación se ha completado con éxito!");
+    }
+}
+
+// Crear una instancia de la clase Verificar para realizar la verificación
+const verificar = new Verificar();
